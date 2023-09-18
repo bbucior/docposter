@@ -9,5 +9,7 @@ contributes:
   formats:
     html:
       minimal: true
-      theme: [custom.scss]
-
+      template: "drposter.html"
+      embed-resources: true
+      css: drposter.css
+      section-divs: true

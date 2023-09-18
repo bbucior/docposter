@@ -47,6 +47,11 @@ knitr::opts_chunk$set(echo = FALSE)  # Hide code by default. Can override chunk-
 <!-- The name drposter came from a convoluted pun: it's a poster based on R, M.D. files (not a real doctor),
 and it also generates academic posters for PhD's and others. -->
 
+```{r, include=FALSE, eval=FALSE}
+source("chrome_pdf.R")
+chrome_pdf(html_path = "template.html")
+```
+
 
 # {.col-2 style="grid-row: span 4;"}
 <!-- Span the first column for four rows, that way we can capture the usage block, two rows of template examples, and refs/footer information -->
