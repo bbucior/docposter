@@ -1,6 +1,13 @@
 ---
 title: "docposter: Prepare Academic Posters Using quarto"
-author: ["<span class=\"presenter\">Ben Bucior<sup>1</sup></span>, &lt;Your name here&gt;<sup>2</sup><ol class=\"affiliations\"><li>Northwestern University, Evanston, IL, USA</li><li>Earth</li></ol>"]
+author:
+  #["<span class=\"presenter\">Ben Bucior<sup>1</sup></span>, &lt;Your name here&gt;<sup>2</sup><ol class=\"affiliations\"><li>Northwestern University, Evanston, IL, USA</li><li>Earth</li></ol>"]
+  - name: Ben Bucior
+    affiliations:
+      - (footnotes or affiliations go here)
+  - name: "&lt;Your name here&gt;"
+    affiliations:
+      - Earth
 format:
   docposter-html:
     fill-page: false

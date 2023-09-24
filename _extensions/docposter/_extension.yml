@@ -12,7 +12,22 @@ contributes:
       fill-page: false
     html:
       minimal: true
-      template: "drposter.html"
       embed-resources: true
       css: drposter.css
       section-divs: true
+      # template: "drposter.html"
+      # A custom template file is no longer required, because all of the poster
+      # customizations can be implemented via config to the built-in html
+      # template (based on comparing the previous drposter.html to resources like
+      # quarto-cli/src/resources/formats/html/templates/title-metadata.html)
+      # Now, use the built-in support for authors + affiliations
+      # (https://quarto.org/docs/journals/authors.html)
+      # and custom includes (https://quarto.org/docs/output-formats/html-basics)
+      template-partials:
+        - title-block.html
+      # Wrap the entire page content in a slides class within the header
+      # (also as part of title-block.html, since include-before-body can only
+      # include pre-rendered literal text)
+      include-after-body:
+        - text: |
+            </div>  <!-- close the main page "slides" wrapper -->
