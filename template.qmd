@@ -64,7 +64,7 @@ chrome_pdf(html_path = "template.html")
 * Goal: automatically get consistent spacing from specifications instead of a manual layout
 
 <p style="text-align:center;">
-![](Resources/drposter.png){style="width:60%;"}
+![](Resources/sticker/docposter.png){style="width:60%;"}
 </p>
 
 

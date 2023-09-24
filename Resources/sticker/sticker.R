@@ -3,10 +3,10 @@
 # This code very closely derived from the MIT License package bcbioSmallRna:
 # https://github.com/lpantano/bcbioSmallRna/blob/master/inst/sticker/sticker.R
 
-hexSticker::sticker("inst/sticker/graduation_hat.svg",
+hexSticker::sticker("Resources/sticker/graduation_hat.svg",
                     #url = "https://github.com/bbucior/drposter",
                     u_size = 5,
-                    package = "drposter",
+                    package = "docposter",
                     s_x = 1.0,
                     s_y = 0.8,
                     s_width = 0.5,
@@ -18,4 +18,4 @@ hexSticker::sticker("inst/sticker/graduation_hat.svg",
                     h_fill = "white",
                     p_color = "#00579E",
                     p_size = 24,  # formerly 17
-                    filename="inst/sticker/drposter.png")
+                    filename="Resources/sticker/docposter.png")
