@@ -166,3 +166,26 @@ find_chrome = function() {
   )
 }
 
+
+# If running this script as a post-render hook for quarto, certain environment
+# variables will be set per the docs at
+# https://quarto.org/docs/projects/scripts.html#pre-and-post-render
+# In that case, convert the html output to pdf
+
+# TODO: also check if the pdf flag is enabled (possibly as a project-level option?)
+#
+# TODO: Maybe the quarto contributes project option?
+# https://quarto.org/docs/reference/projects/options.html
+# https://github.com/quarto-dev/quarto-cli/discussions/6286#discussioncomment-6502919
+
+if (nzchar(Sys.getenv("QUARTO_PROJECT_OUTPUT_FILES"))) {
+  files_to_convert <- strsplit(Sys.getenv("QUARTO_PROJECT_OUTPUT_FILES"), "\n", fixed = TRUE)
+  out_dir <- Sys.getenv("QUARTO_PROJECT_OUTPUT_DIR")
+  message(paste("READ QUARTO_PROJECT_OUTPUT_DIR AS", out_dir))  # no longer need to use this code
+  for (html_file in files_to_convert) {
+    message(paste("Exporting", html_file, "to pdf"))
+    message("")
+    chrome_pdf(html_file)
+  }
+}
+

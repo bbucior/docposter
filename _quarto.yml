@@ -1,0 +1,16 @@
+# Setting up the default project metadata for `quarto use`
+# per https://quarto.org/docs/extensions/project-types.html#project-type-extension
+
+project:
+  title: "DocPoster poster"
+  type: docposter
+  post-render:
+    # TODO: try to move this script within the extensions folder instead of copying to the user-facing project
+    # TODO: try to configure pdf-export config by configuring the R script to
+    # recognize project settings via https://quarto.org/docs/projects/profiles.html
+    - R/chrome_pdf.R 
+
+format:
+  docposter-html:
+    export-pdf: true
+    # TODO: check which flags need to be specified here
