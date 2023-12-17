@@ -28,8 +28,8 @@ body {
 	-webkit-print-color-adjust: exact;  /* Enable background printing in Chrome: http://stackoverflow.com/questions/3893986/css-media-print-issues-with-background-color */
 }
 
-.slides.fill_page {
-	/* Space the content to fill the entire poster, if the fill_page variable is set */
+.slides.fill-page {
+	/* Space the content to fill the entire poster, if the fill-page variable is set */
 	align-content: space-between;
 	height: inherit;  /* Through a series of steps, height eventually inherits from the html page size */
 }

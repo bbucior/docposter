@@ -18,6 +18,13 @@ html {
 	line-height: 1.375; /* Use proportional line spacing so everything is self-consistent */
 }
 
+@media print {
+	/* Override rule in quarto-cli/src/resources/formats/html/_quarto-rules.scss */
+	:root {
+	  font-size: 1cm;
+	}
+}  
+
 h1, h2:not(.author), h3 {
 	font-family: var(--header-font-family);
 }

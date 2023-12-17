@@ -1,5 +1,9 @@
 #' Convert HTML to PDF using Chrome
 #'
+#' This script is lightly adapted from the drposter RMarkdown pdf script to be
+#' compatible with quarto. Other approaches may be possible, per discussion at
+#' https://github.com/quarto-dev/quarto-cli/discussions/5782
+#'
 #' Calls headless Chrome to export an HTML document to a PDF poster automatically
 #' without needing to manually open up the web browser and "print" the document.
 #'
@@ -164,5 +168,18 @@ find_chrome = function() {
     },
     stop('Your platform is not supported')
   )
+}
+
+
+# If running this script as a post-render hook for quarto, certain environment
+# variables will be set per the docs at
+# https://quarto.org/docs/projects/scripts.html#pre-and-post-render
+
+if (nzchar(Sys.getenv("QUARTO_PROJECT_OUTPUT_FILES"))) {
+  files_to_convert <- strsplit(Sys.getenv("QUARTO_PROJECT_OUTPUT_FILES"), "\n", fixed = TRUE)
+  for (html_file in files_to_convert) {
+    message(paste("Exporting", html_file, "to pdf"))
+    chrome_pdf(html_file)
+  }
 }
 
