@@ -70,7 +70,7 @@ and it also generates academic posters for PhD's and others. docposter is its ev
 
 ## Rmarkdown structure
 
-<div class="fullwidth">See also the [source code](https://github.com/bbucior/drposter/tree/master/template.qmd) and [compiled pdf](https://github.com/bbucior/drposter/tree/master/Resources/example_poster.pdf) for this poster on GitHub.</div>
+<div class="fullwidth">See also the [source code](https://github.com/bbucior/docposter/tree/master/template.qmd) and [compiled pdf](https://github.com/bbucior/docposter/tree/master/Resources/example_poster.pdf) for this poster on GitHub.</div>
 
 ```
 ---
