@@ -8,7 +8,7 @@ project:
     # TODO: try to move this script within the extensions folder instead of copying to the user-facing project
     # TODO: try to configure pdf-export config by configuring the R script to
     # recognize project settings via https://quarto.org/docs/projects/profiles.html
-    - R/chrome_pdf.R 
+    - _extensions/docposter/R/chrome_pdf.R 
 
 format:
   docposter-html:
