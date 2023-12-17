@@ -20,4 +20,4 @@ See the project template.qmd file for additional information about the layout sy
 
 ## Example
 
-Here is the source code for a minimal sample document: [template.qmd](template.qmd).
+Here is the source code for a minimal sample document ([template.qmd](template.qmd)) and its compiled output ([Resources/example_poster.pdf](Resources/example_poster.pdf)).
