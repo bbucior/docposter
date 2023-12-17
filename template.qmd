@@ -10,9 +10,8 @@ author:
       - Earth
 format:
   docposter-html:
-    fill-page: false
+    fill-page: true
     embed-resources: true  # self_contained flag is now deprecated in favor of embed-resources
-    export-pdf: true  # TODO: not yet implemented
 csl: Resources/american-chemical-society.csl
 references:
 - id: revealjs
@@ -51,12 +50,7 @@ knitr::opts_chunk$set(echo = FALSE)  # Hide code by default. Can override chunk-
 ```
 
 <!-- The name drposter came from a convoluted pun: it's a poster based on R, M.D. files (not a real doctor),
-and it also generates academic posters for PhD's and others. -->
-
-```{r, include=FALSE, eval=FALSE}
-source("chrome_pdf.R")
-chrome_pdf(html_path = "template.html")
-```
+and it also generates academic posters for PhD's and others. docposter is its evolution into quarto-based docs -->
 
 
 # {.col-2 style="grid-row: span 4;"}
@@ -64,24 +58,26 @@ chrome_pdf(html_path = "template.html")
 
 ## Overview
 
-* Template for writing HTML/CSS posters using Rmarkdown
+* Template for writing HTML/CSS posters using quarto
 * Same conventions as pandoc presentations (e.g. reveal.js)[@revealjs; @rstudio-reveal; @mdformats]
 * Separates content from presentation
 * Goal: automatically get consistent spacing from specifications instead of a manual layout
 
-<p style="text-align:center;">
+<p style="text-align:center; flex: 25%;">
 ![](Resources/sticker/docposter.png){style="width:60%;"}
 </p>
 
 
 ## Rmarkdown structure
 
-<div class="fullwidth">See also the [source code](https://github.com/bbucior/drposter/tree/master/inst/example/poster.Rmd) and [compiled pdf](https://github.com/bbucior/drposter/tree/master/inst/example/poster.pdf) for this poster on Github.</div>
+<div class="fullwidth">See also the [source code](https://github.com/bbucior/drposter/tree/master/template.qmd) and [compiled pdf](https://github.com/bbucior/drposter/tree/master/Resources/example_poster.pdf) for this poster on GitHub.</div>
 
 ```
 ---
-title: Title of your document within R Markdown's YAML header
-output: drposter::drposter_poster
+title: Title of your document within the YAML header
+format:
+  docposter-html:
+    <options_go_here>
 ---
 
 # {.col-3}
@@ -125,8 +121,8 @@ are probably still some that are untested.
 * See [CitationStyles.org](https://citationstyles.org/) and the CSL project[@csl-github] for more info about citation options (CC BY SA 3.0)
 
 ### This package
-* drposter may be used under different licenses at your option
-* Entire R package: GPLv3 (like [R markdown](https://github.com/rstudio/rmarkdown))
+* docposter may be used under different licenses at your option
+* Entire template: GPLv3 (like [R markdown](https://github.com/rstudio/rmarkdown))
 * Files for the [drposter pandoc template](https://github.com/bbucior/drposter/tree/master/inst/rmarkdown/templates/drposter/skeleton/drposter_files): same conditions as the official [pandoc templates](https://github.com/jgm/pandoc/tree/master/data/templates)
 * Poster CSS: [CC0 public domain](https://creativecommons.org/publicdomain/zero/1.0/)
 
@@ -134,33 +130,31 @@ are probably still some that are untested.
 ## Community {style="--header-color:darkred; --other-color-for-h2-gradient:red;"}
 
 <p class="qr">
-![QR code](Resources/qr_code.png)
-For more information, please visit the project page at <https://github.com/bbucior/drposter>.  Feel free to report issues, pull requests, or general comments on Github.
+![QR code](Resources/qr_code.svg)
+For more information, please visit the project page at <https://github.com/bbucior/docposter>.
 </p>
-
 
 
 # {.col-2}
 
 ## How to use this package
 
-### Installation and updates {.fullwidth}
+### Installation and usage {.fullwidth}
 
-1. (NOT YET UPDATED) `devtools::install_github("bbucior/drposter", dep=FALSE)` (or `install_local` on a downloaded copy) to install/update the package
-2. In RStudio, you can find the format listed as a template under the "New R Markdown" wizard, or use the command line.
-3. Template files are cached in `drposter_files/` to decouple your poster from the installed package version.  Use `drposter_update` to resync them.
+* Run `quarto use template bbucior/docposter` to install the package in your local directory.
+* Run `quarto render` within your project to compile the poster to html and pdf.
 
 ### Customizing the template
 
 * Avoid modifying `_extensions/`
 * Indirectly override those rules in your own `custom.css` or equivalent
   * Easier to see and share your changes
-  * Decouples your modifications from the base drposter styles
+  * Decouples your modifications from the base docposter styles
 * Customize the format of the bibliography[@rstudio-bib;@stackoverflow-refs] using a CSL style[@csl-github]
 
 ### Export
 
-* View and "print as PDF" from Chrome[@firefox-footnote]  <!-- Note: the footnote used to be a bibtex "note," but the default ACS template doesn't include that field -->
+* By default, the project will attempt to export your poster to PDF. You can also run this step manually be using the "print as PDF" option within Chrome[@firefox-footnote]  <!-- Note: the footnote used to be a bibtex "note," but the default ACS template doesn't include that field -->
 * Be sure to save a PDF (and possibly html with `embed-resources: true`) to archive your project at the end, in case there are changes in pandoc or web dependencies
 * You can also render the poster in other formats, such as a revealjs slide deck
 
@@ -206,8 +200,9 @@ This is an example of the minimalist theme.
 ## See also
 
 * tikzposter latex template, and its example themes for inspiration <https://bitbucket.org/surmann/tikzposter/downloads/>
-* [Other R markdown templates](https://gist.github.com/Pakillo/4854e5d760351206084f6be8abe476b2) with their advantages/disadvantages (pdf compatibility, consistent syntax with flexdashboard, etc.)
+* [Other R markdown templates](https://gist.github.com/Pakillo/4854e5d760351206084f6be8abe476b2) with their advantages/disadvantages (pdf compatibility, consistent syntax with flexdashboard, interactivity, etc.)
 
 
 ## References
 <div id="refs" class="references"></div>
+

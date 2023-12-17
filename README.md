@@ -1,23 +1,23 @@
-# <%= title %> Format
+# docposter Format
 
-## Installing
+**This repo contains an experimental quarto extension. It is not being maintained or supported at this time.**
 
-*TODO*: Replace the `<github-organization>` with your GitHub organization.
+docposter is an experimental format to prepare posters in Markdown and HTML/CSS via quarto instead of manual layout using slide presentation software. This repo is an evolution of [drposter](https://github.com/bbucior/drposter), rebuilding and simplifying that RMarkdown format as a quarto extension. Depending on your use case, other alternatives such as [posterdown](https://github.com/brentthorne/posterdown) or [quarto dashboards](https://quarto.org/docs/dashboards/) may be more suitable.
+
+## Installing docposter
 
 ```bash
-quarto use template <github-organization>/<%= filesafename %>
+quarto use template bbucior/docposter
 ```
 
-This will install the extension and create an example qmd file that you can use as a starting place for your article.
+This command will install the extension and create an example qmd file and _quarto.yml project that you can use as a starting place for your poster.
 
-## Using
+## Using docposter
 
-*TODO*: Describe how to use your format.
+Render the poster by running `quarto render` within your project directory.
 
-## Format Options
-
-*TODO*: If your format has options that can be set via document metadata, describe them.
+See the project template.qmd file for additional information about the layout syntax, customizing the appearence via custom.css, and other project options. For now, these project settings are intended to be reverse-compatible with drposter, though may be subject to change in a future version.
 
 ## Example
 
-Here is the source code for a minimal sample document: [example.qmd](example.qmd).
+Here is the source code for a minimal sample document: [template.qmd](template.qmd).
