@@ -7,7 +7,7 @@ project:
   post-render:
     # Also convert the poster html output to pdf.
     # Comment out this chrome_pdf.R step if only the html output is desired.
-    - _extensions/docposter/R/chrome_pdf.R 
+    - _extensions/bbucior/docposter/R/chrome_pdf.R 
 
 format:
   docposter-html:
