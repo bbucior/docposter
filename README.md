@@ -7,7 +7,7 @@ docposter is an experimental format to prepare posters in Markdown and HTML/CSS 
 ## Installing docposter
 
 ```bash
-quarto use template bbucior/docposter
+quarto use template bbucior/docposter@master
 ```
 
 This command will install the extension and create an example qmd file and _quarto.yml project that you can use as a starting place for your poster.

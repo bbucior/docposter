@@ -141,7 +141,7 @@ For more information, please visit the project page at <https://github.com/bbuci
 
 ### Installation and usage {.fullwidth}
 
-* Run `quarto use template bbucior/docposter` to install the package in your local directory.
+* Run `quarto use template bbucior/docposter@master` to install the package in your local directory.
 * Run `quarto render` within your project to compile the poster to html and pdf.
 
 ### Customizing the template
